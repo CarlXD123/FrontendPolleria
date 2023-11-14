@@ -55,7 +55,7 @@ const Promotions: React.FC = () => {
                     if (data && data.recommendations && Array.isArray(data.recommendations)) {
                         const recommendationsWithImageUrl = data.recommendations.map((rec: any) => ({
                             ...rec,
-                            imageUrl: rec.image ? `http://localhost:4000/uploads/${rec.image}` : null
+                            imageUrl: rec.image ? `https://hola-1i8m.onrender.com/uploads/${rec.image}` : null
                         }));
                         setRecommendations(recommendationsWithImageUrl);
                     } else {
