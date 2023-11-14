@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/users';
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL + 'api/users';
 const PRODUCT_API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/products'; // Asegúrate de que esta es la URL correcta de tu backend
 const ORDER_API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/orders';
 const RECOMMENDATION_API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/recommendations'; 
