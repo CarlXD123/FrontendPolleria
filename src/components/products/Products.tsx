@@ -25,7 +25,7 @@ const Products: React.FC = () => {
           name: product.name,
           description: product.description,
           price: product.price,
-          imageUrl: `http://localhost:4000/uploads/${product.image}`, // Asumiendo que tus imágenes se sirven desde el backend. Cambia la URL si es diferente.
+          imageUrl: `${process.env.REACT_APP_BACKEND_URL}/uploads/${product.image}`, // Asumiendo que tus imágenes se sirven desde el backend. Cambia la URL si es diferente.
         })));
       } catch (error) {
         console.error("Hubo un error al obtener los productos:", error);
