@@ -4,5 +4,4 @@ declare module '*.jpeg';
 declare module '*.svg';
 declare module '@heroicons/react/outline';
 
-export {};
 
