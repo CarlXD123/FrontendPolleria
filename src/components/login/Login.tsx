@@ -45,16 +45,14 @@ const Login: React.FC = () => {
   };
 
   const authenticate = async (e: FormEvent<HTMLFormElement>) => {
-    console.log('Autenticando...');
     e.preventDefault();
 
     const isValid = validateLogin();
-    console.log('¿Es válido el formulario?', isValid);
 
     if (isValid) {
       try {
         const responseData = await loginUser(email, password);
-        console.log(responseData);
+       
         if (responseData.token) {
           localStorage.setItem('authToken', responseData.token);
           // Guarda la información del usuario en el localStorage
