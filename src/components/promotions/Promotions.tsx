@@ -46,7 +46,7 @@ const Promotions: React.FC = () => {
     const currentUser = localData ? JSON.parse(localData) : null;
     const userId = currentUser ? currentUser.id_usuario : null;
 
-    console.log(recommendations)
+ 
     useEffect(() => {
         if (userId) {
             const loadRecommendations = async () => {
