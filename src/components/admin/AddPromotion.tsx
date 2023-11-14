@@ -25,7 +25,6 @@ const AddPromotion = () => {
     });
     const [image, setImage] = useState<File | undefined>(undefined);
 
-    console.log(products)
     React.useEffect(() => {
         // Obtener la lista de productos al montar el componente
         const fetchProducts = async () => {
