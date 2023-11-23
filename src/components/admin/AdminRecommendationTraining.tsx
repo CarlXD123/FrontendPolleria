@@ -68,22 +68,26 @@ const AdminRecommendationTraining = () => {
             <h1 className="text-3xl font-bold text-gray-800 mb-5">Entrenar Modelo de Recomendaciones</h1>
             <div className="bg-white p-6 rounded-lg shadow">
                 <button
-                    onClick={confirmAndTrainModel}
-                    disabled={isLoading}
-                    className={`w-full text-white font-bold py-2 px-4 rounded ${isLoading ? 'bg-gray-300' : 'bg-gray-500 hover:bg-blue-700'} transition-colors`}
-                >
-                    {isLoading ? 'Entrenando...' : 'Iniciar Entrenamiento'}
-                </button>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-                <button
                     onClick={confirmAndClearRecommendations}
                     disabled={isLoading}
                     className={`w-full text-white font-bold py-2 px-4 rounded ${isLoading ? 'bg-gray-300' : 'bg-red-500 hover:bg-red-700'} transition-colors`}
                 >
                     {isLoading ? 'Eliminando...' : 'Eliminar Recomendaciones'}
                 </button>
+                {!isLoading && <div className="mt-4 text-green-500">Primero limpiar las recomendaciones</div>}
             </div>
+
+            <div className="bg-white p-6 rounded-lg shadow mt-4">
+                <button
+                    onClick={confirmAndTrainModel}
+                    disabled={isLoading}
+                    className={`w-full text-white font-bold py-2 px-4 rounded ${isLoading ? 'bg-gray-300' : 'bg-gray-500 hover:bg-blue-700'} transition-colors`}
+                >
+                    {isLoading ? 'Entrenando...' : 'Iniciar Entrenamiento'}
+                </button>
+                {!isLoading && <div className="mt-4 text-green-500">Segundo ejecutar el entrenamiento</div>}
+            </div>
+
         </div>
     );
 };
