@@ -48,12 +48,12 @@ const Navbar: React.FC<{ onDarkModeToggle: () => void, darkMode: boolean, onMenu
     navigate('/login');  // Redirige al usuario a la página de inicio de sesión
   };
 
-  const handleDahsboard= () => {
+  const handleDahsboard = () => {
     navigate('/dashboard'); // Navega a '/dashboard'
   };
 
 
-  
+
   return (
     <div className={`bg-brightRed p-4 text-white shadow-lg flex justify-between items-center`}>
       <div className="flex items-center">
@@ -95,6 +95,10 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
   };
 
 
+  const handleDashboard = () => {
+    navigate('/dashboard'); // Navega a '/dashboard'
+  };
+
   return (
     <div className={`${darkMode ? 'bg-gray-800' : 'bg-white shadow-md'}`}>
       {/* Hamburguesa */}
@@ -110,10 +114,11 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
         <ul className="list-none p-5">
           {userRole === 'Admin' && (
             <>
-              <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer w-full h-full`}>
-                <Link to="/dashboard" className="block w-full h-full">
-                  Inicio
-                </Link>
+              <li
+                className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer w-full h-full`}
+                onClick={handleDashboard}
+              >
+                Inicio
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
                 <Link to="/dashboard/profile" className="block w-full h-full">Perfil</Link>
