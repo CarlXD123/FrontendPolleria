@@ -6,6 +6,8 @@ interface Employee {
     username: string;
     email: string;
     password: string;
+    direccion: string;
+    telefono: string;
 }
 
 const AddEmployee: React.FC = () => {
@@ -13,6 +15,8 @@ const AddEmployee: React.FC = () => {
         username: '',
         email: '',
         password: '',
+        direccion: '',
+        telefono: '',
     });
     const [employeesList, setEmployeesList] = useState<Employee[]>([]);
 
@@ -37,7 +41,7 @@ const AddEmployee: React.FC = () => {
     const handleSubmit = async () => {
         console.log('Administrador añadido:', employee);
         try {
-            const response = await registerUser(employee.username, employee.password, employee.email, 'Admin', 1);
+            const response = await registerUser(employee.username, employee.password, employee.email, 'Admin', employee.direccion, employee.telefono, 1);
             if (response) {
                 Swal.fire({
                     icon: 'success',
@@ -48,6 +52,8 @@ const AddEmployee: React.FC = () => {
                     username: '',
                     email: '',
                     password: '',
+                    direccion: '',
+                    telefono: '',
                 });
                 // Refresca la lista de administradores después de añadir uno nuevo
                 const updatedUsers = await getUsers();
@@ -87,6 +93,30 @@ const AddEmployee: React.FC = () => {
                         type="email"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         id="email"
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">Direccion:</label>
+                    <input
+                        name="direccion"
+                        value={employee.direccion}
+                        onChange={handleInputChange}
+                        placeholder="Direccion"
+                        type="direccion"
+                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="direccion"
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">Telefono:</label>
+                    <input
+                        name="telefono"
+                        value={employee.telefono}
+                        onChange={handleInputChange}
+                        placeholder="Telefono"
+                        type="telefono"
+                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="direccion"
                     />
                 </div>
                 <div className="mb-4">
