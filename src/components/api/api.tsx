@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/users';
-const PRODUCT_API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/products'; // Asegúrate de que esta es la URL correcta de tu backend
-const ORDER_API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/orders';
-const RECOMMENDATION_API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/recommendations'; 
-const PROMOTION_API_BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/promotions/add'; // Cambia esto si tu backend está en una URL diferente
+const API_BASE_URL = 'http://localhost:4000/api/users';
+const PRODUCT_API_BASE_URL = 'http://localhost:4000/api/products'; // Asegúrate de que esta es la URL correcta de tu backend
+const ORDER_API_BASE_URL = 'http://localhost:4000/api/orders';
+const RECOMMENDATION_API_BASE_URL = 'http://localhost:4000/api/recommendations'; 
+const PROMOTION_API_BASE_URL = 'http://localhost:4000/api/promotions/add'; // Cambia esto si tu backend está en una URL diferente
 
 
 export const loginUser = async (email: string, password: string) => {
@@ -19,13 +19,15 @@ export const loginUser = async (email: string, password: string) => {
   }
 };
 
-export const registerUser = async (username: string, password: string, email: string, rol: string, idrol: number) => {
+export const registerUser = async (username: string, password: string, email: string, rol: string, direccion: string, telefono: string,  idrol: number) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/`, {
       username,
       password,
       email,
       rol,
+      direccion,
+      telefono,
       idrol // Agregando idrol al body de la solicitud
     });
     return response.data;
