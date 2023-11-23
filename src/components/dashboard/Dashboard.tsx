@@ -117,9 +117,6 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
                 <Link to="/dashboard/addproduct">Productos</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/addpromotion">Nueva Promoción</Link>
-              </li>
-              <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
                 <Link to="/dashboard/train">Entrenamiento</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
@@ -140,8 +137,11 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
                 <Link to="/dashboard/menu">Menu</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/orders">Realizar Pedido</Link>
+                <Link to="/dashboard/orders">
+                  Realizar Pedido
+                </Link>
               </li>
+
             </>
           )}
         </ul>
