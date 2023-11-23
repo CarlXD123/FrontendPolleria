@@ -5,6 +5,7 @@ import { registerUser, getUsers } from '../api/api';
 interface Employee {
     username: string;
     email: string;
+    rol: string;
     password: string;
     direccion: string;
     telefono: string;
@@ -14,6 +15,7 @@ const AddEmployee: React.FC = () => {
     const [employee, setEmployee] = useState<Employee>({
         username: '',
         email: '',
+        rol: '',
         password: '',
         direccion: '',
         telefono: '',
@@ -52,6 +54,7 @@ const AddEmployee: React.FC = () => {
                     username: '',
                     email: '',
                     password: '',
+                    rol: '',
                     direccion: '',
                     telefono: '',
                 });
@@ -157,7 +160,7 @@ const AddEmployee: React.FC = () => {
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {employeesList.map((e, index) => (
+                            {employeesList.filter(e => e.rol === 'Admin').map((e, index) => (
                                 <tr key={index}>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="text-sm font-medium text-gray-900">{e.username}</div>
