@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:4000/api/users';
-const PRODUCT_API_BASE_URL = 'http://localhost:4000/api/products'; // Asegúrate de que esta es la URL correcta de tu backend
-const ORDER_API_BASE_URL = 'http://localhost:4000/api/orders';
-const RECOMMENDATION_API_BASE_URL = 'http://localhost:4000/api/recommendations'; 
-const PROMOTION_API_BASE_URL = 'http://localhost:4000/api/promotions/add'; // Cambia esto si tu backend está en una URL diferente
+const API_BASE_URL = 'https://hola-1i8m.onrender.com/api/users';
+const PRODUCT_API_BASE_URL = 'https://hola-1i8m.onrender.com/api/products'; // Asegúrate de que esta es la URL correcta de tu backend
+const ORDER_API_BASE_URL = 'https://hola-1i8m.onrender.com/api/orders';
+const RECOMMENDATION_API_BASE_URL = 'https://hola-1i8m.onrender.com/api/recommendations'; 
+const PROMOTION_API_BASE_URL = 'https://hola-1i8m.onrender.com/api/promotions/add'; // Cambia esto si tu backend está en una URL diferente
 
 
 export const loginUser = async (email: string, password: string) => {
