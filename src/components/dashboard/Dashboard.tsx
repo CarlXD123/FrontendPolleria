@@ -95,10 +95,6 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
   };
 
 
-  const handleDashboard = () => {
-    navigate('/dashboard'); // Navega a '/dashboard'
-  };
-
   return (
     <div className={`${darkMode ? 'bg-gray-800' : 'bg-white shadow-md'}`}>
       {/* Hamburguesa */}
@@ -114,11 +110,8 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
         <ul className="list-none p-5">
           {userRole === 'Admin' && (
             <>
-              <li
-                className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer w-full h-full`}
-                onClick={handleDashboard}
-              >
-                Inicio
+              <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
+                <Link to="/dashboard" className="block w-full h-full text-center">Inicio</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
                 <Link to="/dashboard/profile" className="block w-full h-full">Perfil</Link>
