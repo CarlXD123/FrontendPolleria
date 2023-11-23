@@ -114,19 +114,19 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
                 <Link to="/dashboard" className="block w-full h-full text-center">Inicio</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/profile" className="block w-full h-full">Perfil</Link>
+                <Link to="/dashboard/profile" className="block w-full h-full text-center">Perfil</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/addsuplier" className="block w-full h-full">Empleados</Link>
+                <Link to="/dashboard/addsuplier" className="block w-full h-full text-center">Empleados</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/addproduct" className="block w-full h-full">Productos</Link>
+                <Link to="/dashboard/addproduct" className="block w-full h-full text-center">Productos</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/train" className="block w-full h-full">Entrenamiento</Link>
+                <Link to="/dashboard/train" className="block w-full h-full text-center">Entrenamiento</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/sales" className="block w-full h-full">Ventas</Link>
+                <Link to="/dashboard/sales" className="block w-full h-full text-center">Ventas</Link>
               </li>
             </>
           )}
@@ -134,16 +134,16 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
           {userRole === 'Cliente' && (
             <>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard" className="block w-full h-full">Inicio</Link>
+                <Link to="/dashboard" className="block w-full h-full text-center">Inicio</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/profile" className="block w-full h-full">Perfil</Link>
+                <Link to="/dashboard/profile" className="block w-full h-full text-center">Perfil</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/menu" className="block w-full h-full">Menu</Link>
+                <Link to="/dashboard/menu" className="block w-full h-full text-center">Menu</Link>
               </li>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard/orders" className="block w-full h-full">
+                <Link to="/dashboard/orders" className="block w-full h-full text-center">
                   Realizar Pedido
                 </Link>
               </li>
