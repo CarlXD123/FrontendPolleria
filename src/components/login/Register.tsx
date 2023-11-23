@@ -15,6 +15,8 @@ const Register: React.FC = () => {
   const [rol, setRol] = useState<string>('Cliente');
   const [idrol, setIdRol] = useState<number | null>(null);
   const [email, setEmail] = useState<string>('');
+  const [direccion, setDireccion] = useState<string>('');
+  const [telefono, setTelefono] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [validate, setValidate] = useState<ValidationState>({});
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -37,6 +39,14 @@ const Register: React.FC = () => {
         value: password,
         isRequired: true,
         minLength: 6,
+      },
+      direccion: {
+        value: direccion,
+        isRequired: true, // puedes añadir más validaciones si es necesario
+      },
+      telefono: {
+        value: telefono,
+        isRequired: true, // y aquí también
       },
       rol: {
         value: rol,
@@ -80,7 +90,7 @@ const Register: React.FC = () => {
 
 
     try {
-      const response = await registerUser(username, password, email, rol, idrol ?? CLIENT_ROLE_ID);
+      const response = await registerUser(username, password, email, rol, direccion, telefono, idrol ?? CLIENT_ROLE_ID);
       console.log(response);
 
       // Check if the affected rows are greater than 0
@@ -94,6 +104,8 @@ const Register: React.FC = () => {
         setName('');
         setRol('Cliente');
         setEmail('');
+        setDireccion('');
+        setTelefono('');
         setPassword('');
         setValidate({});
       } else {
@@ -141,6 +153,45 @@ const Register: React.FC = () => {
             />
             {validate.validate && validate.validate.name && (
               <p className="text-red-500 mt-2">{validate.validate.name[0]}</p>
+            )}
+          </div>
+          {/* Campo de Dirección */}
+          <div className="mb-5">
+            <label htmlFor="direccion" className="block text-gray-600">Dirección</label>
+            <input
+              type="text"
+              id="direccion"
+              name="direccion"
+              value={direccion}
+              onChange={(e) => setDireccion(e.target.value)}
+              className={`w-full px-4 py-2 border rounded-md ${validate.validate && validate.validate.direccion
+                ? 'border-red-500'
+                : 'border-gray-300'
+                }`}
+              placeholder="Ingresa tu dirección"
+            />
+            {validate.validate && validate.validate.direccion && (
+              <p className="text-red-500 mt-2">{validate.validate.direccion[0]}</p>
+            )}
+          </div>
+
+          {/* Campo de Teléfono */}
+          <div className="mb-5">
+            <label htmlFor="telefono" className="block text-gray-600">Teléfono</label>
+            <input
+              type="text"
+              id="telefono"
+              name="telefono"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+              className={`w-full px-4 py-2 border rounded-md ${validate.validate && validate.validate.telefono
+                ? 'border-red-500'
+                : 'border-gray-300'
+                }`}
+              placeholder="Ingresa tu teléfono"
+            />
+            {validate.validate && validate.validate.telefono && (
+              <p className="text-red-500 mt-2">{validate.validate.telefono[0]}</p>
             )}
           </div>
           <div className="mb-5">
