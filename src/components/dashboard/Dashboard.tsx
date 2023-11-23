@@ -104,9 +104,11 @@ const Sidebar: React.FC<{ darkMode: boolean, currentUser: any }> = ({ darkMode, 
         <ul className="list-none p-5">
           {userRole === 'Admin' && (
             <>
+              <Link to="/dashboard" className="block w-full h-full">
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
-                <Link to="/dashboard" className="block w-full h-full">Inicio</Link>
+                Inicio
               </li>
+              </Link>
               <li className={`p-2 hover:bg-yellow-500 ${darkMode ? 'text-white' : 'text-black'} hover:text-white transition-colors duration-300 cursor-pointer`}>
                 <Link to="/dashboard/profile" className="block w-full h-full">Perfil</Link>
               </li>
